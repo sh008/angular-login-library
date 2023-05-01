@@ -3,5 +3,8 @@
   "dest": "../../dist/login-lib",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@abacritt/angularx-social-login"
+  ]
 }

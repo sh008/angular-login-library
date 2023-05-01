@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   Component,
   EventEmitter,
   Input,
@@ -6,6 +7,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  inject,
 } from '@angular/core';
 import {
   ILoginRes,
@@ -14,23 +16,37 @@ import {
   mergeLoginOptions,
 } from './login-lib.interface';
 import { Observable } from 'rxjs';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 @Component({
   selector: 'lib-login-sh',
   templateUrl: './login-lib.component.html',
   styleUrls: ['./login-lib.component.css'],
 })
 export class LoginLibComponent implements OnInit, OnChanges {
+
+  //create form
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
-      rememberMe:[false]
+      rememberMe: [false],
     });
 
     this.loginRes = new EventEmitter();
+
+
+    //inject google login
+    inject(SocialAuthService);
   }
+
 
   //style input
   @Input() options: LoginOptions = { ...defaultOptions };
@@ -90,4 +106,5 @@ export class LoginLibComponent implements OnInit, OnChanges {
       : sessionStorage;
     storage.setItem('token', token);
   }
+
 }

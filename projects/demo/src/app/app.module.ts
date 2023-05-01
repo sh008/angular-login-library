@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    LoginLibModule,
+    LoginLibModule.forRoot({googleClientId:'537128440339-vaeegl6efmaqer2kqf5tol55b96kqhfm.apps.googleusercontent.com'}),
     HttpClientModule
   ],
   providers: [],

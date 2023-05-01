@@ -29,7 +29,7 @@ export const defaultOptions: LoginOptions = {
   rememberMeLabel: 'من را به خاطر بسپار',
   usernameBindName: '',
   passwordBindName: '',
-  responseTokenKey: '',
+  responseTokenKey: ''
 };
 
 export interface ILoginRes {

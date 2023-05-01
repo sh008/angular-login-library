@@ -23,7 +23,7 @@ export class AppComponent {
     footerLabel: 'نسخه دمو',
     usernameBindName: 'username',
     passwordBindName: 'password',
-    responseTokenKey: 'token',
+    responseTokenKey: 'token'
   };
 
   loginRes(response: ILoginRes) {

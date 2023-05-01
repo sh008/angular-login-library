@@ -1,0 +1,32 @@
+{
+  "name": "login-lib",
+  "version": "0.0.0-watch+1682982336686",
+  "peerDependencies": {
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0"
+  },
+  "dependencies": {
+    "@abacritt/angularx-social-login": "^2.0.0",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2015/login-lib.mjs",
+  "es2020": "fesm2020/login-lib.mjs",
+  "esm2020": "esm2020/login-lib.mjs",
+  "fesm2020": "fesm2020/login-lib.mjs",
+  "fesm2015": "fesm2015/login-lib.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2020": "./esm2020/login-lib.mjs",
+      "es2020": "./fesm2020/login-lib.mjs",
+      "es2015": "./fesm2015/login-lib.mjs",
+      "node": "./fesm2015/login-lib.mjs",
+      "default": "./fesm2020/login-lib.mjs"
+    }
+  }
+}
