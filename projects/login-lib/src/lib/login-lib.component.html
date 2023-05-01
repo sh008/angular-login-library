@@ -1,0 +1,53 @@
+<hgroup>
+  <h1>{{ options.header }}</h1>
+</hgroup>
+<form (ngSubmit)="submit()" [formGroup]="form" name="loginForm">
+  <div class="group">
+    <input class="text-box" formControlName="username" type="text" /><span
+      class="highlight"
+    ></span
+    ><span class="bar"></span>
+    <label class="input"
+      [ngClass]="{
+        'text-danger':
+          form.get('username')?.touched &&
+          form.get('username')?.hasError('required')
+      }"
+      >{{ options.usernameLabel }}</label
+    >
+  </div>
+  <div class="group">
+    <input class="text-box" formControlName="password" type="password" /><span
+      class="highlight"
+    ></span
+    ><span class="bar"></span>
+    <label class="input"
+      [ngClass]="{
+        'text-danger':
+          form.get('password')?.touched &&
+          form.get('password')?.hasError('required')
+      }"
+      >{{ options.passwordLabel }}</label
+    >
+  </div>
+
+  <div *ngIf="options.rememberMe" class="remember-holder">
+    <label>{{options.rememberMeLabel}}</label>
+    <input type="checkbox" formControlName="rememberMe" />
+  </div>
+
+  <button type="submit" class="button buttonBlue" [disabled]="submitSpinner">
+    {{ options.submitLabel }}
+  </button>
+</form>
+<!-- footer section -->
+<section>
+  <span *ngIf="options.logo">
+    <img [src]="options.logo" />
+  </span>
+  <p>
+    {{ options.footerLabel }}
+  </p>
+</section>
+
+<!-- end footer section -->
