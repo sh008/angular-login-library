@@ -1,27 +1,95 @@
-# UserAuth
+# LoginLib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
-## Development server
+## Clone Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `git clone https://github.com/sh008/angular-login-library.git`
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Import the `LoginFormModule` inside a `login.module.ts` :
 
-## Build
+```typescript
+import { LoginLibModule } from "login-lib";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+  imports: [LoginLibModule.forRoot({ googleClientId: "Client Id" })],
+})
+export class LoginModule {}
+```
 
-## Running unit tests
+Add the lib-login-sh component inside a component :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<lib-login-sh [options]="loginOptions" [loginApi]="$loginApi" (loginRes)="loginRes($event)"> </lib-login-sh>
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<table>
+    <tr>
+        <th>Option</th>
+        <th>Description</th>
+        <th>Defeault Value</th>
+    </tr>
+    <tr>
+        <th>header</th>
+        <th>A text at the top of the page</th>
+        <th>empty</th>
+    </tr>
+        <tr>
+        <th>usernameLabel</th>
+        <th>A text show at the first input</th>
+        <th>نام کاربری</th>
+    </tr>
+            <tr>
+        <th>passwordLabel</th>
+        <th>A text show at the second input</th>
+        <th>کلمه عبور</th>
+    </tr>
+            <tr>
+        <th>submitLabel</th>
+        <th>Button label</th>
+        <th>ورود</th>
+    </tr>
+            <tr>
+        <th>footerLabel</th>
+        <th>A text show at the bottom of the page</th>
+        <th>empty</th>
+    </tr>
+            <tr>
+        <th>logo</th>
+        <th>A Image show at the bottom of the page</th>
+        <th>empty</th>
+    </tr>
+            <tr>
+        <th>rememberMe</th>
+        <th>If that is be true User can store self token if the local storage</th>
+        <th>true</th>
+    </tr>
+            <tr>
+        <th>usernameLabel</th>
+        <th>A text show at the first input</th>
+        <th>نام کاربری</th>
+    </tr>
+            <tr>
+        <th>rememberMeLabel</th>
+        <th>remember me label</th>
+        <th> 'من را به خاطر بسپار'</th>
+    </tr>
+            <tr>
+        <th>usernameBindName(required)</th>
+        <th>library send username to Api in the this key propery</th>
+        <th></th>
+    </tr>
+            <tr>
+        <th>passwordBindName(required)</th>
+        <th>library send password to Api in the this key propery</th>
+        <th></th>
+    </tr>
+            <tr>
+        <th>responseTokenKey(required)</th>
+        <th>When status Api is 200 library check this propery from the response json and store value from that</th>
+        <th></th>
+    </tr>
+    
+</table>
