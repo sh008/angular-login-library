@@ -79,7 +79,7 @@ export class LoginLibComponent implements OnInit, OnChanges {
     //set send data
     let data: any = {};
     data[this.options.usernameBindName] = this.form.get('username')?.value;
-    data[this.options.passwordBindName] = this.form.get('username')?.value;
+    data[this.options.passwordBindName] = this.form.get('password')?.value;
 
     this.$loginApi(data)?.subscribe({
       next: (res: any) => {
